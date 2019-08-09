@@ -4,5 +4,13 @@
   <%= link_to 'Supprimer', cocktail_dose_path(dose), method: :delete %>
 <% end %>
 
+<%= simple_form_for(@cocktail) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <!-- [...] -->
+<% end %>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
 <%= link_to 'Retour', cocktails_path %>
 <%= link_to 'Ajouter dose', new_cocktail_dose_path(@cocktail) %>
