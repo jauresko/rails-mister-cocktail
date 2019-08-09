@@ -19,26 +19,28 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Action", "#", class: "dropdown-item" %>
           <%= link_to "Another action", "#", class: "dropdown-item" %>
-          <%= link_to 'create a cocktail', new_cocktail_path %>
         </div>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80');">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1558383409-ab7ef8db3e01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1970&q=80);">
+  <div class="container text-white">
+    <h1>Explore different cocktails and share yours with us !</h1>
+    <%= link_to 'create a cocktail', new_cocktail_path %>
   </div>
 </div>
 
-
-<div class="cards">
 <% @cocktails.each do |cocktail| %>
-  <div class="card-category text-white rounded m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
     <h2>  <%= cocktail.name %> </h2>
-    <p> <% cocktail.doses.each do |dose| %> </p>
+     <% cocktail.doses.each do |dose| %>
     <p> <%=dose.description%>  - <%= dose.ingredient.name%> </p>
     <% end %>
   </div>
+</div>
 <% end %>
+
